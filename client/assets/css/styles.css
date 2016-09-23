@@ -1,0 +1,54 @@
+.mainbg {
+  background-image: url('../images/mainbg.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.background {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.formBox {
+  padding: 3%;
+  background-color: rgba(256,256,256,.85);
+  margin-top: 5%;
+}
+.navbar {
+  border-radius: 0;
+}
+
+.showErr p, .errMsg {
+  padding: 3px 1px;
+  font-style: italic;
+  color: red;
+}
+.searchBar {
+  padding-left: 7px;
+  border-radius: 10px;
+  border: 1px solid rgb(180,180,180);
+  margin: 3px 0 6px 0;
+}
+.a_name {
+  font-style: italic;
+}
+.a_content {
+  font-weight: bold;
+}
+.showContent {
+  margin-top: 5%;
+  padding: 3%;
+  background-color: rgba(256,256,256,.85);
+}
+.logout {
+  cursor: pointer;
+}

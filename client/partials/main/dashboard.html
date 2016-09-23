@@ -1,0 +1,62 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Q&A</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#/dashboard">Dashboard</a></li>
+        <li><a href="#/new_question">Ask a question</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{curUser.name}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>My profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="logout"><a ng-click="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="background"></div>
+<div class="showErr" ng-repeat="err in errors">
+  <p>{{err}}</p>
+</div>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 showContent">
+    <h3>Hi {{curUser.name}}!</h3>
+    <p>Here are some questions you may be interested in.</p><br>
+    <p>
+      <input type="text" class="searchBar" placeholder="Search quesion" ng-model="search.title">
+    </p>
+
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Questions</th>
+        <th>Answers</th>
+        <th>Actions</th>
+      </tr>
+      <tr ng-repeat="q in questions | filter:search">
+        <td>{{q.title}}</td>
+        <td>{{q._answers.length}}</td>
+        <td>
+          <a ng-href="#/questions/{{q._id}}" class="btn btn-info btn-xs">Show</a>
+          <a ng-href="#/questions/{{q._id}}/answer" class="btn btn-success btn-xs">Answer</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
