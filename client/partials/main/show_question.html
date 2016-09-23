@@ -41,7 +41,7 @@
     <table class="table table-hover">
     <caption>Answers:</caption>
       <tr ng-repeat="answer in question._answers | orderBy:'-likes'">
-        <td>
+        <td class="showAnswers">
           <p class="a_name">{{answer.user}}:</p>
           <h5 class="a_content">{{answer.content}}</h5>
           <p>{{answer.details}}</p>
