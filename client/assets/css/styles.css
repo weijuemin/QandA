@@ -49,6 +49,9 @@
   padding: 3%;
   background-color: rgba(256,256,256,.85);
 }
+.showAnswers {
+  max-width: 70%;
+}
 .logout {
   cursor: pointer;
 }
